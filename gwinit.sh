@@ -9,15 +9,12 @@ echo "$HOSTNAME" > /etc/hostname
 read -p "New user: " USER
 useradd -m -U -G sudo -s /bin/bash $USER
 passwd $USER
-
-chown -R $USER:$USER /home/$USER
-mkdir /home/$USER/.ssh
-chmod 700 /home/$USER/.ssh
-chmod 600 /home/$USER/.ssh/*
-
 echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
 
 mkdir /home/$USER/.ssh
+chmod 700 /home/$USER/.ssh
+chmod 600 /home/$USER/.ssh/*
+chown -R $USER:$USER /home/$USER
 read -p -s "SSH key: " SSH_KEY
 echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
 
