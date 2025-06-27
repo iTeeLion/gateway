@@ -27,6 +27,7 @@ add_user() {
 add_user_key() {
   mkdir /home/$USER/.ssh
   read -s -p "SSH key: " SSH_KEY
+  echo " "
   echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
   chmod 700 /home/$USER/.ssh
   chmod -R 600 /home/$USER/.ssh/*
