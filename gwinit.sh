@@ -5,7 +5,7 @@ change_root_password() {
 }
 
 install_packages() {
-  apt update && apt upgrade -y && apt install sudo mc htop fail2ban
+  apt update && apt upgrade -y && apt install -y sudo mc htop fail2ban
 }
 
 change_hostname() {
