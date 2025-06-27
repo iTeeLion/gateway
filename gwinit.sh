@@ -40,11 +40,11 @@ allow_user_sudo() {
 
 setup_ssh_port() {
   read -p "SSH port: " SSH_PORT
-  sudo sed -i 's/^#*Port .*/Port $SSH_PORT/' /etc/ssh/sshd_config
+  sed -i "s/^#*Port .*/Port $SSH_PORT/" /etc/ssh/sshd_config
 }
 
 disable_ssh_root() {
-  sudo sed -i 's/^#*PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config
+  sed -i "s/^#*PermitRootLogin .*/PermitRootLogin no/" /etc/ssh/sshd_config
 }
 
 setup_ssh() {
