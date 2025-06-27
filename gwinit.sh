@@ -13,7 +13,7 @@ echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
 
 mkdir /home/$USER/.ssh
 chmod 700 /home/$USER/.ssh
-chmod 600 /home/$USER/.ssh/*
+chmod -R 600 /home/$USER/.ssh/*
 chown -R $USER:$USER /home/$USER
 read -p -s "SSH key: " SSH_KEY
 echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
