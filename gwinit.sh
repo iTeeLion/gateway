@@ -1,14 +1,17 @@
 #!/bin/bash
 
 change_root_password() {
+  echo "Let's change root password!"
   passwd root
 }
 
 install_packages() {
+  echo "Installing packages..."
   apt update && apt install -y sudo mc htop fail2ban
 }
 
 upgrade_packages() {
+  echo "Upgrade system..."
   apt upgrade -y
 }
 
@@ -29,12 +32,14 @@ add_user_key() {
   read -s -p "SSH key: " SSH_KEY
   echo " "
   echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
+  echo "Setting user permissions..."
   chmod 700 /home/$USER/.ssh
   chmod -R 600 /home/$USER/.ssh/*
   chown -R $USER:$USER /home/$USER
 }
 
 allow_user_sudo() {
+  echo "Granting user sudo access..."
   echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER
 }
 
@@ -48,12 +53,14 @@ disable_ssh_root() {
 }
 
 setup_ssh() {
+  echo "Configuring SSH"
   setup_ssh_port
   disable_ssh_root
   systemctl restart sshd
 }
 
 install_docker() {
+  echo "Install docker..."
   install -m 0755 -d /etc/apt/keyrings
   curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
   chmod a+r /etc/apt/keyrings/docker.asc
