@@ -11,6 +11,7 @@ useradd -m -U -G sudo -s /bin/bash $USER
 passwd $USER
 
 chown -R $USER:$USER /home/$USER
+mkdir /home/$USER/.ssh
 chmod 700 /home/$USER/.ssh
 chmod 600 /home/$USER/.ssh/*
 
