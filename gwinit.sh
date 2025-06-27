@@ -5,7 +5,7 @@ change_root_password() {
 }
 
 install_packages() {
-  sudo apt update && apt upgrade -y && apt install sudo mc htop
+  apt update && apt upgrade -y && apt install sudo mc htop
 }
 
 change_hostname() {
