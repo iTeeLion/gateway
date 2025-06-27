@@ -26,7 +26,7 @@ sudo sed -i 's/^#*Port .*/Port $SSH_PORT/' /etc/ssh/sshd_config
 sudo sed -i 's/^#*PermitRootLogin .*/PermitRootLogin no/' /etc/ssh/sshd_config
 systemctl restart sshd
 
-sudo apt upgrade -y
+sudo apt update && apt upgrade -y && apt install sudo mc htop
 
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
