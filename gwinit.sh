@@ -5,7 +5,11 @@ change_root_password() {
 }
 
 install_packages() {
-  apt update && apt upgrade -y && apt install -y sudo mc htop fail2ban
+  apt update && apt install -y sudo mc htop fail2ban
+}
+
+upgrade_packages() {
+  apt upgrade -y
 }
 
 change_hostname() {
@@ -67,6 +71,7 @@ main() {
   add_user_key
   allow_user_sudo
   setup_ssh
+  upgrade_packages
   install_docker
 }
 
