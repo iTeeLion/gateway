@@ -34,4 +34,6 @@ main() {
     get_3xui
     run_3xui
 }
+
 main
+
