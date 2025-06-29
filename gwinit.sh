@@ -29,9 +29,17 @@ add_user() {
 
 add_user_key() {
   mkdir /home/$USER/.ssh
-  read -s -p "SSH key: " SSH_KEY
+
+
+  read -s -p "SSH key (or leave empty to generate): " SSH_KEY
   echo " "
-  echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
+  if [ -z "$HOSTNAME" ]; then
+    ssh-keygen -t ed25519 -f /home/$USER/.ssh/server.key
+    cat /home/$USER/.ssh/server.key.pub >> /home/$USER/.ssh/authorized_keys
+  else
+    echo "$SSH_KEY" > /home/$USER/.ssh/authorized_keys
+  fi
+  
   echo "Setting user permissions..."
   chmod 700 /home/$USER/.ssh
   chmod -R 600 /home/$USER/.ssh/*
