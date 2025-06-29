@@ -32,7 +32,7 @@ add_user_key() {
 
   read -s -p "SSH key (or leave empty to generate): " SSH_KEY
   echo " "
-  if [ -z "$HOSTNAME" ]; then
+  if [ -z "$SSH_KEY" ]; then
     ssh-keygen -t ed25519 -f /home/$USER/.ssh/server.key
     cat /home/$USER/.ssh/server.key.pub >> /home/$USER/.ssh/authorized_keys
   else
