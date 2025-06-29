@@ -30,7 +30,6 @@ add_user() {
 add_user_key() {
   mkdir /home/$USER/.ssh
 
-
   read -s -p "SSH key (or leave empty to generate): " SSH_KEY
   echo " "
   if [ -z "$HOSTNAME" ]; then
