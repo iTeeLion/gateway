@@ -1,13 +1,13 @@
 COMPOSE_FILE=docker-compose.yaml
 
 # Стандартные цели
-.PHONY: up down restart recreate
-
-up:
- docker compose -f $(COMPOSE_FILE) up -d
+.PHONY: build up down restart recreate rebuild
 
 build:
  docker compose -f $(COMPOSE_FILE) --build
+
+up:
+ docker compose -f $(COMPOSE_FILE) up -d
 
 down:
  docker compose -f $(COMPOSE_FILE) down
