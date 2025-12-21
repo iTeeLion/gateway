@@ -1,5 +1,13 @@
 #!/bin/bash
 
+update_packages() {
+    apt update && apt upgrade -y
+}
+
+install_docker() {
+    sudo curl -fsSL https://get.docker.com | sh
+}
+
 ask_hostname() {
     read -p "Hostname: " HOSTNAME
     if [ -z "$HOSTNAME" ]; then
@@ -28,6 +36,8 @@ run_3xui() {
 }
 
 main() {
+    update_packages
+    install_docker
     ask_hostname
     install_certbot
     certbot certonly --standalone -d $HOSTNAME
