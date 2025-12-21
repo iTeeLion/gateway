@@ -7,7 +7,7 @@ change_root_password() {
 
 install_packages() {
   echo "Installing packages..."
-  apt update && apt install -y sudo mc htop fail2ban
+  apt update && apt install -y sudo make mc htop fail2ban
 }
 
 upgrade_packages() {
