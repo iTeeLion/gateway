@@ -18,6 +18,9 @@ install_remnawave() {
     pw=$(openssl rand -hex 24) && sed -i "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$pw/" .env && sed -i "s|^\(DATABASE_URL=\"postgresql://postgres:\)[^\@]*\(@.*\)|\1$pw\2|" .env
     
     docker network create npm-network
+
+    # ToDo
+    # docker compose up -d && docker compose logs -f -t
 }
 
 main() {
