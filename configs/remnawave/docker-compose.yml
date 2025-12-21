@@ -44,22 +44,22 @@ services:
       remnawave-redis:
         condition: service_healthy
 
-  remnawave-subs:
-    image: remnawave/subscription-page:latest
-    container_name: remnawave-subs
-    hostname: remnawave-subs
-    restart: always
-    <<: [*common, *logging, *env]
-    environment:
-      - APP_PORT=${APP_SUBS_PORT}
-    ports:
-      - "127.0.0.1:3010:3010"
-    networks:
-      - remnawave-network
-      - proxy-network
-    depends_on:
-      remnawave:
-        condition: service_healthy
+#  remnawave-subs:
+#    image: remnawave/subscription-page:latest
+#    container_name: remnawave-subs
+#    hostname: remnawave-subs
+#    restart: always
+#    <<: [*common, *logging, *env]
+#    environment:
+#      - APP_PORT=${APP_SUBS_PORT}
+#    ports:
+#      - "127.0.0.1:3010:3010"
+#    networks:
+#      - remnawave-network
+#      - proxy-network
+#    depends_on:
+#      remnawave:
+#        condition: service_healthy
 
   remnawave-db:
     image: postgres:17.6
