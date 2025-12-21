@@ -34,6 +34,7 @@ main() {
     update_packages
     install_docker
     install_remnawave
+    install_npm
 }
 
 main
