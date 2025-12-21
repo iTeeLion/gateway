@@ -28,6 +28,8 @@ install_npm() {
     mkdir /opt/npm && cd /opt/npm
     curl -o docker-compose.yml https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/nginx-proxy-manager/docker-compose.yml
     curl -o .env https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/nginx-proxy-manager/.env.sample
+    curl -o Makefile https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/nginx-proxy-manager/Makefile
+    
     pw=$(openssl rand -hex 24) && sed -i "s/^POSTGRES_PASSWORD=.*/POSTGRES_PASSWORD=$pw/" .env && sed -i "s|^\(DATABASE_URL=\"postgresql://postgres:\)[^\@]*\(@.*\)|\1$pw\2|" .env
 }
 
