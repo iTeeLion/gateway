@@ -1,4 +1,4 @@
-COMPOSE_FILE=docker-compose.yaml
+COMPOSE_FILE=docker-compose.yml
 
 # Стандартные цели
 .PHONY: build up down restart recreate rebuild
