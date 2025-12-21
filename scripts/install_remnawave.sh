@@ -9,7 +9,9 @@ install_docker() {
 }
 
 install_remnawave() {
-    echo "ToDo"
+    mkdir /opt/remnawave && cd /opt/remnawave
+    curl -o docker-compose.yml https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/remnawave/docker-compose.yml
+    curl -o .env https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/remnawave/.env.sample
 }
 
 main() {
