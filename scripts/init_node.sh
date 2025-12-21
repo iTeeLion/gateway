@@ -66,7 +66,7 @@ setup_ssh() {
   systemctl restart sshd
 }
 
-install_docker() {
+install_docker_old() {
   echo "Install docker..."
   install -m 0755 -d /etc/apt/keyrings
   curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
@@ -76,6 +76,10 @@ install_docker() {
     $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
     tee /etc/apt/sources.list.d/docker.list > /dev/null
   apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+}
+
+install_docker() {
+    sudo curl -fsSL https://get.docker.com | sh
 }
 
 main() {
