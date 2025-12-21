@@ -1,5 +1,5 @@
 services:
-  npm:
+  app:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
@@ -28,7 +28,7 @@ services:
     depends_on:
       - db
 
-  npm-db:
+  db:
     image: postgres:17
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
