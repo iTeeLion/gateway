@@ -12,6 +12,7 @@ install_remnawave() {
     mkdir /opt/remnawave && cd /opt/remnawave
     curl -o docker-compose.yml https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/remnawave/docker-compose.yml
     curl -o .env https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/remnawave/.env.sample
+    curl -o Makefile https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/remnawave/Makefile
 
     sed -i "s/^JWT_AUTH_SECRET=.*/JWT_AUTH_SECRET=$(openssl rand -hex 64)/" .env && sed -i "s/^JWT_API_TOKENS_SECRET=.*/JWT_API_TOKENS_SECRET=$(openssl rand -hex 64)/" .env
     sed -i "s/^METRICS_PASS=.*/METRICS_PASS=$(openssl rand -hex 64)/" .env && sed -i "s/^WEBHOOK_SECRET_HEADER=.*/WEBHOOK_SECRET_HEADER=$(openssl rand -hex 64)/" .env
