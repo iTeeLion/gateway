@@ -50,6 +50,8 @@ services:
     hostname: remnawave-subs
     restart: always
     <<: [*common, *logging, *env]
+    environment:
+      - APP_PORT=${APP_SUBS_PORT}
     ports:
       - "127.0.0.1:3010:3010"
     networks:
