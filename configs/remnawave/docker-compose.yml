@@ -30,7 +30,7 @@ services:
       - 127.0.0.1:3001:${METRICS_PORT:-3001}
     networks:
       - remnawave-network
-      - npm-network
+      - proxy-network
     healthcheck:
       test:
         ["CMD-SHELL", "curl -f http://localhost:${METRICS_PORT:-3001}/health"]
@@ -54,7 +54,7 @@ services:
       - "127.0.0.1:3010:3010"
     networks:
       - remnawave-network
-      - npm-network
+      - proxy-network
 
   remnawave-db:
     image: postgres:17.6
@@ -104,6 +104,7 @@ networks:
     name: remnawave-network
     driver: bridge
     external: false
-  npm-network:
+  proxy-network:
+    name: proxy-network
     driver: bridge
     external: true
