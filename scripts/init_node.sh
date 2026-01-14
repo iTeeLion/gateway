@@ -82,6 +82,10 @@ install_docker() {
     sudo curl -fsSL https://get.docker.com | sh
 }
 
+enable_bbr() {
+    sudo wget -O /etc/sysctl.d/99-bbr.conf https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/etc/sysctl.d/99-bbr.conf
+}
+
 main() {
   change_root_password
   install_packages
@@ -92,6 +96,7 @@ main() {
   setup_ssh
   upgrade_packages
   install_docker
+  enable_bbr
 }
 
 main
