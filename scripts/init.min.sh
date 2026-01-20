@@ -64,6 +64,7 @@ setup_ssh() {
   setup_ssh_port
   disable_ssh_root
   systemctl restart sshd
+  systemctl restart ssh
 }
 
 install_docker_old() {
