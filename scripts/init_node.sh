@@ -1,8 +1,8 @@
 #!/bin/bash
 
-change_root_password() {
-  echo "Let's change root password!"
-  passwd root
+upgrade_packages() {
+  echo "Upgrade system..."
+  apt update && apt upgrade -y
 }
 
 install_packages() {
@@ -10,9 +10,9 @@ install_packages() {
   apt update && apt install -y sudo make mc htop fail2ban
 }
 
-upgrade_packages() {
-  echo "Upgrade system..."
-  apt upgrade -y
+change_root_password() {
+  echo "Let's change root password!"
+  passwd root
 }
 
 change_hostname() {
@@ -87,14 +87,14 @@ enable_bbr() {
 }
 
 main() {
-  change_root_password
+  upgrade_packages
   install_packages
+  change_root_password
   change_hostname
   add_user
   add_user_key
   allow_user_sudo
   setup_ssh
-  upgrade_packages
   install_docker
   enable_bbr
 }
