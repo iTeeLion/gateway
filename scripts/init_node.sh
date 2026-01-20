@@ -7,7 +7,7 @@ upgrade_packages() {
 
 install_packages() {
   echo "Installing packages..."
-  apt update && apt install -y sudo make mc htop fail2ban
+  apt update && apt install -y sudo make wget curl fail2ban mc htop
 }
 
 change_root_password() {
@@ -64,6 +64,7 @@ setup_ssh() {
   setup_ssh_port
   disable_ssh_root
   systemctl restart sshd
+  systemctl restart ssh
 }
 
 install_docker_old() {
