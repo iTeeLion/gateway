@@ -83,6 +83,17 @@ install_docker() {
     sudo curl -fsSL https://get.docker.com | sh
 }
 
+ask_bbr() {
+    read -p "Do you want to enable bbr? [y/n]: " ANSWER
+    if [[ "$ANSWER" == "y" ]] || [[ "$ANSWER" == "yes" ]]; then
+        enable_bbr
+    elif [[ "$ANSWER" == "n" ]] || [[ "$ANSWER" == "no" ]]; then
+        echo "BBR skipped"
+    else
+        ask_bbr
+    fi
+}
+
 enable_bbr() {
     sudo wget -O /etc/sysctl.d/99-bbr.conf https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/etc/sysctl.d/99-bbr.conf
 }
@@ -97,7 +108,7 @@ main() {
   allow_user_sudo
   setup_ssh
   install_docker
-  enable_bbr
+  ask_bbr
 }
 
 main
