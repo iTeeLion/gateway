@@ -17,3 +17,8 @@ Install RemnaWave:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_remnawave.sh && chmod +x ./install_remnawave.sh && ./install_remnawave.sh
 ```
+
+Install MTProto:
+```
+curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto.sh && chmod +x ./install_mtproto.sh && ./install_mtproto.sh
+```
