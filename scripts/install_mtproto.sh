@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir /opt/mtproto
+mkdir -p /opt/mtproto
 
 cd /opt/mtproto
 
