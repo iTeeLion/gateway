@@ -12,7 +12,7 @@ Configure node:
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/init_node.sh && chmod +x ./init_node.sh && ./init_node.sh
 ```
 
-### 3xui:
+## 3xui:
 
 Install:
 ```
@@ -21,7 +21,7 @@ curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scrip
 Update:
 ...soon...
 
-### RemnaWave:
+## RemnaWave:
 
 Install:
 ```
@@ -45,7 +45,7 @@ Update:
   ```
 </details>
 
-### MTProto proxy:
+## MTProto proxy:
 Install:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto.sh && chmod +x ./install_mtproto.sh && ./install_mtproto.sh
