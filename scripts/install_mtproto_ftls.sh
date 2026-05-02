@@ -14,7 +14,7 @@ PORT="443"
 FAKE_DOMAIN="ya.ru"  # Фиксированный домен для Fake TLS
 
 # Надо поправить на выбор директории, пока хардкод...
-mkdir /opt/mtproto_ftls && cd /opt/mtproto_ftls
+#mkdir /opt/mtproto_ftls && cd /opt/mtproto_ftls
 
 echo "🚀 Запуск MTProto прокси с Fake TLS"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -89,7 +89,7 @@ if sudo docker ps | grep -q ${CONTAINER_NAME}; then
     echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
     
     # Сохраняем конфигурацию
-    cat > ~/mtproto_config.txt << EOF
+    cat > ./mtproto_config.txt << EOF
 SERVER=${SERVER_IP}
 PORT=${PORT}
 SECRET=${SECRET}
