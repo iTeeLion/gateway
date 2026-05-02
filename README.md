@@ -33,7 +33,7 @@ Update:
   <summary>Update remnawave</summary>
 
   ```
-  cd /opt/remnawave && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/remnawave/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
+  cd /opt/remnawave && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
   ```
 </details>
 
@@ -41,7 +41,7 @@ Update:
   <summary>Update remnanode</summary>
 
   ```
-  cd /opt/remnanode && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/remnanode/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
+  cd /opt/remnanode && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
   ```
 </details>
 
@@ -54,3 +54,11 @@ Generate FakeTLS key:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/mtproto/faketls.sh && chmod +x ./faketls.sh && ./faketls.sh
 ```
+Update:
+<details>
+  <summary>Update remnawave</summary>
+
+  ```
+  cd /opt/mtproto && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
+  ```
+</details>
