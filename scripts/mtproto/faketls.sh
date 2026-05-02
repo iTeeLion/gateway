@@ -34,7 +34,8 @@ main() {
     install_packages
     get_domain
     gen_key
-    #sed -i "s/^#\?SECRET=.*/SECRET=${GENERATED_SECRET//\//\\/}/" config.env
+    
+    sed -i "s/^#\?SECRET=.*/SECRET=${GENERATED_SECRET//\//\\/}/" config.env
 }
 
 main
