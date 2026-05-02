@@ -50,7 +50,7 @@ Install:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto.sh && chmod +x ./install_mtproto.sh && ./install_mtproto.sh
 ```
-With FakeTLS:
+Generate FakeTLS key:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/mtproto/faketls.sh && chmod +x ./faketls.sh && ./faketls.sh
 ```
