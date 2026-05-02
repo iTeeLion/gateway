@@ -52,5 +52,5 @@ curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scrip
 ```
 With FakeTLS:
 ```
-mkdir /opt/mtproto_ftls && cd /opt/mtproto_ftls && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto_ftls.sh && chmod +x ./install_mtproto_ftls.sh && ./install_mtproto_ftls.sh
+mkdir -p /opt/mtproto_ftls && cd /opt/mtproto_ftls && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto_ftls.sh && chmod +x ./install_mtproto_ftls.sh && ./install_mtproto_ftls.sh
 ```
