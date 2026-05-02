@@ -11,7 +11,7 @@ NC='\033[0m'
 
 CONTAINER_NAME="mtproto-proxy"
 PORT="443"
-FAKE_DOMAIN="ya.ru"  # Фиксированный домен для Fake TLS
+FAKE_DOMAIN="vk.ru"  # Фиксированный домен для Fake TLS
 
 # Надо поправить на выбор директории, пока хардкод...
 #mkdir /opt/mtproto_ftls && cd /opt/mtproto_ftls
