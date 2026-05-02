@@ -56,7 +56,7 @@ curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scrip
 ```
 Update:
 <details>
-  <summary>Update remnawave</summary>
+  <summary>Update mtproto</summary>
 
   ```
   cd /opt/mtproto && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/upgrade.sh && chmod +x ./upgrade.sh && ./upgrade.sh
