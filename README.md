@@ -1,25 +1,34 @@
 # Gateway install scripts
 
-### Before installation
+## First things first:
+
+We need curl before any installation:
 ```
 apt update && apt install -y curl
 ```
 
-### Basic node preparation:
+Configure node:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/init_node.sh && chmod +x ./init_node.sh && ./init_node.sh
 ```
 
-### Install 3xui:
+### 3xui:
+
+Install:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_3xui.sh && chmod +x ./install_3xui.sh && ./install_3xui.sh
 ```
+Update:
+...soon...
 
-### Install RemnaWave:
+### RemnaWave:
+
+Install:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_remnawave.sh && chmod +x ./install_remnawave.sh && ./install_remnawave.sh
 ```
 
+Update:
 <details>
   <summary>Update remnawave</summary>
 
@@ -36,7 +45,12 @@ curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scrip
   ```
 </details>
 
-### Install MTProto:
+### MTProto proxy:
+Install:
 ```
 curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto.sh && chmod +x ./install_mtproto.sh && ./install_mtproto.sh
+```
+With FakeTLS:
+```
+curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/install_mtproto_ftls.sh && chmod +x ./install_mtproto_ftls.sh && ./install_mtproto_ftls.sh
 ```
