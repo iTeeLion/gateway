@@ -52,7 +52,7 @@ curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scrip
 ```
 Generate FakeTLS key:
 ```
-curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/mtproto/faketls.sh && chmod +x ./faketls.sh && ./faketls.sh
+cd /opt/mtproto && curl -O https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/scripts/mtproto/faketls.sh && chmod +x ./faketls.sh && ./faketls.sh
 ```
 Update:
 <details>
