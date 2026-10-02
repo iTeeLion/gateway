@@ -5,7 +5,11 @@ update_packages() {
 }
 
 install_docker() {
-    sudo curl -fsSL https://get.docker.com | sh
+    if command -v docker &> /dev/null; then
+        echo "docker already installed"
+    else
+        sudo curl -fsSL https://get.docker.com | sh
+    fi
 }
 
 ask_hostname() {
@@ -39,9 +43,9 @@ run_3xui() {
 main() {
     update_packages
     install_docker
-    ask_hostname
-    install_certbot
-    certbot certonly --standalone -d $HOSTNAME
+    # ask_hostname
+    # install_certbot
+    # certbot certonly --standalone -d $HOSTNAME
     get_3xui
     run_3xui
 }
