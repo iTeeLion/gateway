@@ -27,11 +27,11 @@ install_certbot() {
 
 get_3xui() {
     apt install git
-    cd /srv
+    cd /opt
     git clone https://github.com/MHSanaei/3x-ui.git
     cd /opt/3x-ui
-    sed -i -E "s/^([[:space:]]*)#?[[:space:]]*hostname:[[:space:]]*.+/\1hostname: $HOSTNAME/" docker-compose.yml
-    sed -i "/volumes:/a\      - /etc/letsencrypt:/etc/letsencrypt" docker-compose.yml
+    #sed -i -E "s/^([[:space:]]*)#?[[:space:]]*hostname:[[:space:]]*.+/\1hostname: $HOSTNAME/" docker-compose.yml
+    #sed -i "/volumes:/a\      - /etc/letsencrypt:/etc/letsencrypt" docker-compose.yml
     curl -o Makefile https://raw.githubusercontent.com/iTeeLion/gateway/refs/heads/main/configs/3xui/Makefile
 }
 
