@@ -22,3 +22,8 @@ sudo su
 cd /opt/3x-ui/
 docker exec -it 3xui_app sh -c 'x-ui'
 ```
+
+Windows flush DNS
+```
+ipconfig /flushdns
+```
