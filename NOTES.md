@@ -27,3 +27,11 @@ Windows flush DNS
 ```
 ipconfig /flushdns
 ```
+
+Проверка http/socks прокси в PS:
+```
+curl.exe -v -x http://ЛОГИН:ПАРОЛЬ@IP_ПРОКСИ:ПОРТ https://ifconfig.me
+```
+```
+curl.exe -v -x socks5h://ЛОГИН:ПАРОЛЬ@IP_ПРОКСИ:ПОРТ https://ifconfig.me
+```
